@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RockClicker_Two.source.scratch;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,10 +15,11 @@ namespace RockClicker_Two
         [STAThread]
         static void Main()
         {
-            GameCycle cycle = new GameCycle();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(cycle));
+            Application.Run(new DataBindingTest());
+            //Application.Run(new StartScreenForm());
         }
     }
 }

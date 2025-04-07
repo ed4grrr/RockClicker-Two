@@ -31,27 +31,27 @@ namespace RockClicker_Two
         private void _initializedAddons(Form1 form)
         {
             //used to store attached data values
-            form.addOns.Add(form.tempFists);
-            form.addOns.Add(form.tempPickaxe);
-            form.addOns.Add(form.tempJackhammer);
-            form.addOns.Add(form.tempDynamite);
+            form._gameState.addOns.Add(form._gameState.tempFists);
+            form._gameState.addOns.Add(form._gameState.tempPickaxe);
+            form._gameState.addOns.Add(form._gameState.tempJackhammer);
+            form._gameState.addOns.Add(form._gameState.tempDynamite);
 
 
             //used to link the data values to the labels for appropriate Rock per second calculations
-            form.addOnLabelPairs[form.tempFists] = form.fistsCountLabel;
-            form.addOnLabelPairs[form.tempPickaxe] = form.pickaxesCountLabel;
-            form.addOnLabelPairs[form.tempJackhammer] = form.jackhammersCountLabel;
-            form.addOnLabelPairs[form.tempDynamite] = form.dynamiteCountLabel;
+            form._gameState.addOnLabelPairs[form._gameState.tempFists] = form.fistsCountLabel;
+            form._gameState.addOnLabelPairs[form._gameState.tempPickaxe] = form.pickaxesCountLabel;
+            form._gameState.addOnLabelPairs[form._gameState.tempJackhammer] = form.jackhammersCountLabel;
+            form._gameState.addOnLabelPairs[form._gameState.tempDynamite] = form.dynamiteCountLabel;
         }
 
         private void _initializeListboxes(Form1 form)
         {
-            foreach (var addOn in form.addOns)
+            foreach (var addOn in form._gameState.addOns)
             {
                 form.addOnsListbox.Items.Add(addOn.Name);
             }
 
-            foreach (var upgrade in form.upgrades)
+            foreach (var upgrade in form._gameState.upgrades)
             {
                 form.upgradeListbox.Items.Add(upgrade.Name);
             }
@@ -59,7 +59,7 @@ namespace RockClicker_Two
 
 
 
-            foreach (var rockType in form.rockTypes)
+            foreach (var rockType in form._gameState.rockTypes)
             {
                 form.rockTypeListbox.Items.Add(rockType.Name);
             }

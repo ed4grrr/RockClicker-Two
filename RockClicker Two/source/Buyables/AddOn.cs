@@ -1,11 +1,15 @@
-﻿using RockClicker;
-using RockClicker_Two;
+﻿
+
 using System;
 using System.Drawing;
 using System.Reflection;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms.PropertyGridInternal;
 
-public class AddOn : IBuyable
+namespace RockClicker_Two{
+
+    [Serializable]
+    public class AddOn : IBuyable
 {
     public AddOn(string name, float flatRate, string imagePath)
     {
@@ -23,9 +27,13 @@ public class AddOn : IBuyable
 
     private float _costModifier = 0.10f;
 
-    private float multiplier = 1.0f;
 
-    public float Multiplier
+
+
+
+        private float multiplier = 1.0f;
+
+        public float Multiplier
     {
         get { return multiplier; }
         set { multiplier = value; }
@@ -53,42 +61,49 @@ public class AddOn : IBuyable
     }
 }
 
-
-public class Fists : AddOn
+    [Serializable]
+    public class Fists : AddOn
 {
-    public Fists() : base("Fists", 1.0f, @"\Properties\images\fist.png")
+        internal static int amountOwned = 0;
+
+        public Fists() : base("Fists", 1.0f, @"\Properties\images\fist.png")
     {
         this.image = RockClicker_Two.Properties.Resources.fist;
         this.Cost = 100;
-
         
     }
 }
-
-public class Pickaxe : AddOn
+    [Serializable]
+    public class Pickaxe : AddOn
 {
-    public Pickaxe() : base("Pickaxe", 50f, @"\Properties\images\pickaxe.png")
+        internal static int amountOwned = 0;
+
+        public Pickaxe() : base("Pickaxe", 50f, @"\Properties\images\pickaxe.png")
     {
         this.image = RockClicker_Two.Properties.Resources.pickaxe;
         this.Cost = 1000;
     }
 }
-
-public class Jackhammer : AddOn
+    [Serializable]
+    public class Jackhammer : AddOn
 {
-    public Jackhammer() : base("Jackhammer", 500f, @"\Properties\images\jackhammer.png")
+        internal static int amountOwned = 0;
+
+        public Jackhammer() : base("Jackhammer", 500f, @"\Properties\images\jackhammer.png")
     {
         this.image = RockClicker_Two.Properties.Resources.jackhammer;
         this.Cost = 10000;
     }
 }
 
-
-public class Dynamite : AddOn
+    [Serializable]
+    public class Dynamite : AddOn
 {
-    public Dynamite() : base("Dynamite", 5000f, @"\Properties\images\dynamite.png")
+        internal static int amountOwned = 0;
+
+        public Dynamite() : base("Dynamite", 5000f, @"\Properties\images\dynamite.png")
     {
         this.image = RockClicker_Two.Properties.Resources.dynamite;
         this.Cost = 100000;
     }
-}
+}}

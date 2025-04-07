@@ -63,10 +63,19 @@
             this.rockTypeCosts = new System.Windows.Forms.Label();
             this.rocksMinedAllTimeCounterLabel = new System.Windows.Forms.Label();
             this.rocksMinedAllTimeLabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rockCollectionStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeCompanyNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.upgradePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rockTypePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clickRockPicture)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upgradePictureLabel
@@ -175,9 +184,9 @@
             this.fistCounterLabel.AutoSize = true;
             this.fistCounterLabel.Location = new System.Drawing.Point(836, 513);
             this.fistCounterLabel.Name = "fistCounterLabel";
-            this.fistCounterLabel.Size = new System.Drawing.Size(82, 32);
+            this.fistCounterLabel.Size = new System.Drawing.Size(191, 32);
             this.fistCounterLabel.TabIndex = 19;
-            this.fistCounterLabel.Text = "Fists:";
+            this.fistCounterLabel.Text = "FistsUpgrade:";
             // 
             // pickaxeCounterLabel
             // 
@@ -300,6 +309,7 @@
             this.ownedRockTypes.Size = new System.Drawing.Size(271, 283);
             this.ownedRockTypes.TabIndex = 28;
             this.ownedRockTypes.Visible = false;
+            this.ownedRockTypes.SelectedIndexChanged += new System.EventHandler(this.ownedRockTypes_SelectedIndexChanged);
             // 
             // clickRockLabel
             // 
@@ -382,6 +392,72 @@
             this.rocksMinedAllTimeLabel.TabIndex = 36;
             this.rocksMinedAllTimeLabel.Text = "Rocks Mined (All Time):";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.toolsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(2269, 52);
+            this.menuStrip1.TabIndex = 38;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadSaveToolStripMenuItem,
+            this.saveGameToolStripMenuItem,
+            this.startNewGameToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // loadSaveToolStripMenuItem
+            // 
+            this.loadSaveToolStripMenuItem.Name = "loadSaveToolStripMenuItem";
+            this.loadSaveToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.loadSaveToolStripMenuItem.Text = "Load Save";
+            this.loadSaveToolStripMenuItem.Click += new System.EventHandler(this.loadSaveToolStripMenuItem_Click);
+            // 
+            // saveGameToolStripMenuItem
+            // 
+            this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
+            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.saveGameToolStripMenuItem.Text = "Save Game";
+            this.saveGameToolStripMenuItem.Click += new System.EventHandler(this.saveGameToolStripMenuItem_Click);
+            // 
+            // startNewGameToolStripMenuItem
+            // 
+            this.startNewGameToolStripMenuItem.Name = "startNewGameToolStripMenuItem";
+            this.startNewGameToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.startNewGameToolStripMenuItem.Text = "Start New Game";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rockCollectionStatsToolStripMenuItem,
+            this.changeCompanyNameToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(111, 48);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // rockCollectionStatsToolStripMenuItem
+            // 
+            this.rockCollectionStatsToolStripMenuItem.Name = "rockCollectionStatsToolStripMenuItem";
+            this.rockCollectionStatsToolStripMenuItem.Size = new System.Drawing.Size(509, 54);
+            this.rockCollectionStatsToolStripMenuItem.Text = "Rock Collection Stats";
+            this.rockCollectionStatsToolStripMenuItem.Click += new System.EventHandler(this.rockCollectionStatsToolStripMenuItem_Click);
+            // 
+            // changeCompanyNameToolStripMenuItem
+            // 
+            this.changeCompanyNameToolStripMenuItem.Name = "changeCompanyNameToolStripMenuItem";
+            this.changeCompanyNameToolStripMenuItem.Size = new System.Drawing.Size(509, 54);
+            this.changeCompanyNameToolStripMenuItem.Text = "Change Company Name";
+            this.changeCompanyNameToolStripMenuItem.Click += new System.EventHandler(this.changeCompanyNameToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -421,13 +497,18 @@
             this.Controls.Add(this.rockTypePicture);
             this.Controls.Add(this.addOnsPictureBox);
             this.Controls.Add(this.clickRockPicture);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "RockClicker";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.upgradePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rockTypePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addOnsPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clickRockPicture)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,7 +524,6 @@
         private System.Windows.Forms.Label addOnsPictureLabel;
         private System.Windows.Forms.Label rockTypePictureLabel;
         private System.Windows.Forms.Label rocksCollectedLabel;
-        private System.Windows.Forms.Label rockCounter;
         private System.Windows.Forms.Label helpersLabel;
         private System.Windows.Forms.Label upgradeLabel;
         private System.Windows.Forms.Label rockTypeLabel;
@@ -458,7 +538,6 @@
         private System.Windows.Forms.Label addOnCostLabel;
         private System.Windows.Forms.Label upgradeCost;
         private System.Windows.Forms.Label rockTypeCosts;
-        private System.Windows.Forms.Label rocksMinedAllTimeCounterLabel;
         private System.Windows.Forms.Label rocksMinedAllTimeLabel;
         internal System.Windows.Forms.ListBox upgradeListbox;
         internal System.Windows.Forms.ListBox addOnsListbox;
@@ -469,6 +548,16 @@
         internal System.Windows.Forms.Label pickaxesCountLabel;
         internal System.Windows.Forms.Label jackhammersCountLabel;
         internal System.Windows.Forms.Label dynamiteCountLabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadSaveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startNewGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rockCollectionStatsToolStripMenuItem;
+        internal System.Windows.Forms.Label rocksMinedAllTimeCounterLabel;
+        internal System.Windows.Forms.Label rockCounter;
+        private System.Windows.Forms.ToolStripMenuItem changeCompanyNameToolStripMenuItem;
     }
 }
 

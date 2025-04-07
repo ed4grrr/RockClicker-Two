@@ -46,28 +46,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOn.cs" />
-    <Compile Include="RockCalculator.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="GameState.cs" />
+    <Compile Include="source\Buyables\AddOn.cs" />
+    <Compile Include="source\Forms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="source\Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="source\Forms\RenameYourCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="source\Forms\RenameYourCompany.Designer.cs">
+      <DependentUpon>RenameYourCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="source\scratch\DataBindingTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="source\scratch\DataBindingTest.Designer.cs">
+      <DependentUpon>DataBindingTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="source\util\DataSourceManager.cs" />
+    <Compile Include="source\util\RockCalculator.cs" />
+    <Compile Include="source\Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="source\Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameCycle.cs" />
-    <Compile Include="IBuyable.cs" />
-    <Compile Include="MainFormInitializer.cs" />
-    <Compile Include="Modifiers.cs" />
+    <Compile Include="source\GameCycle\GameCycle.cs" />
+    <Compile Include="source\Buyables\IBuyable.cs" />
+    <Compile Include="source\util\MainFormInitializer.cs" />
+    <Compile Include="source\Buyables\Modifiers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RockType.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="source\Forms\RockStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="source\Forms\RockStatsForm.Designer.cs">
+      <DependentUpon>RockStatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="source\Buyables\RockType.cs" />
+    <Compile Include="source\Forms\StartScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="source\Forms\StartScreenForm.Designer.cs">
+      <DependentUpon>StartScreenForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="source\Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="source\Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="source\Forms\RenameYourCompany.resx">
+      <DependentUpon>RenameYourCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="source\Forms\RockStatsForm.resx">
+      <DependentUpon>RockStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="source\Forms\StartScreenForm.resx">
+      <DependentUpon>StartScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="source\scratch\DataBindingTest.resx">
+      <DependentUpon>DataBindingTest.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

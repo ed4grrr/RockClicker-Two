@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace RockClicker_Two
 {
+    [Serializable]
     internal class RockType : IBuyable
     {
         public string Name { get; set; }
@@ -41,29 +42,32 @@ namespace RockClicker_Two
         }
     }
 
-
+    [Serializable]
     internal class SedimentaryRock : RockType
     {
         public SedimentaryRock() : base("Sedimentary Rock", @"\Properties\images\sedimentaryRock.png", 1.0f, 1.0f)
         {
             this.Image = RockClicker_Two.Properties.Resources.sedimentaryRock;
+            this.Cost = 1000;
         }
 
     }
-
+    [Serializable]
     internal class IgneousRock : RockType
     {
         public IgneousRock() : base("Igneous Rock", @"\Properties\images\igneousRock.png", 2f, 0.5f)
         {
             this.Image = RockClicker_Two.Properties.Resources.igeneousRock;
+            this.Cost = 10000;
         }
     }
-
+    [Serializable]
     internal class MetamorphicRock : RockType
     {
         public MetamorphicRock() : base("Metamorphic Rock", @"\Properties\images\metamorphicRock.png", 0.5f, 3.0f)
         {
             this.Image = RockClicker_Two.Properties.Resources.metamorphicRock;
+            this.Cost = 100000;
         }
     }
 }

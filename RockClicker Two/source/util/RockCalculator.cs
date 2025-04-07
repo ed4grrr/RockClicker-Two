@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,25 @@ namespace RockClicker_Two
             this.form = form;
         }
 
-        internal long calculateCookiesPerSecond(long rocksToAdd)
+        internal List<Modifiers> getModifiers(Type type)
+        {
+            List<Modifiers> modifiers = new List<Modifiers>();
+            foreach (Modifiers modifier in form._gameState.ownedModifiers)
+            {
+                if (modifier.affectedAddOnType == type)
+                {
+                    modifiers.Add(modifier);
+                }
+            }
+
+            return modifiers;
+        }
+
+        internal long calculateRocksPerSecond(long rocksToAdd)
         {
             foreach (var helper in form.ownedHelpers)
             {
+                
                 if (helper.Value == 0) continue;
                 rocksToAdd = _calculateRocksPerSecondPerAddOn(rocksToAdd, helper);
 
@@ -29,7 +45,7 @@ namespace RockClicker_Two
 
         private long _calculateRocksPerSecondPerAddOn(long rocksToAdd, KeyValuePair<Label, int> helper)
         {
-            foreach (var addOn in this.form.addOns)
+            foreach (var addOn in this.form._gameState.addOns)
             {
 
                 if (helper.Key.Name.Contains(addOn.Name.ToLower()))
