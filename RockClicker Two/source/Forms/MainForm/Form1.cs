@@ -31,7 +31,7 @@ namespace RockClicker_Two
 
 
         internal Dictionary<Label, int> ownedHelpers = new Dictionary<Label, int>();
-
+        
 
 
         public Form1(GameCycle cycle, string companyName)
@@ -151,12 +151,13 @@ namespace RockClicker_Two
 
         private void _buyAddOn(AddOn item, Label sender)
         {
-            long currentNumberOfAddOns = this.returnAddOnCount(item);
-
+            long currentNumberOfAddOns = (long)item.GetType().GetField("_amount_Owmed").GetValue(null);
+            
 
             _gameState.RockCount -= item._calculateCost(currentNumberOfAddOns);
 
-            this.ownedHelpers[_gameState.addOnLabelPairs[item]]++;
+            //this.ownedHelpers[_gameState.addOnLabelPairs[item]]++;
+            item.GetType().GetField("_amountOwned").SetValue(item, currentNumberOfAddOns + 1);
             this._updateAddOnsCounts();
             this._updateAddonCostLabel();
         }

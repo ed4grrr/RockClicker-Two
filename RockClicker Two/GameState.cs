@@ -12,6 +12,29 @@ namespace RockClicker_Two
     [Serializable]
     internal class GameState
     {
+
+
+        internal GameState(Form1 form, string companyName)
+        {
+            this.rockCounter = form.rockCounter;
+            this.rocksMinedAllTimeCounterLabel = form.rocksMinedAllTimeCounterLabel;
+            this.ownedHelpers = form.ownedHelpers;
+            this._originalName = companyName;
+            this.displayName = companyName;
+            this.form = form;
+            ownedAddOns = new Dictionary<AddOn, int>
+        {
+                {this.tempFists, 0},
+                {this.tempPickaxe, 0},
+                {this.tempJackhammer, 0},
+                {this.tempDynamite, 0}
+
+
+
+        };
+        }
+
+        Form1 form;
         private long _rockCount = 0;
         private long _rockCountAllTime = 0;
         internal string _originalName = "";
@@ -52,7 +75,7 @@ namespace RockClicker_Two
         internal Dictionary<AddOn, int> ownedAddOns = new Dictionary<AddOn, int>();
 
 
-        internal DataSourceManager dataSourceManager = new DataSourceManager();
+        
 
         public long RockCount
         {
@@ -98,13 +121,6 @@ namespace RockClicker_Two
 
         public Label rockCounter;
         public Label rocksMinedAllTimeCounterLabel;
-        internal GameState(Form1 form, string companyName)
-        {
-            this.rockCounter = form.rockCounter;
-            this.rocksMinedAllTimeCounterLabel = form.rocksMinedAllTimeCounterLabel;
-            this.ownedHelpers = form.ownedHelpers;
-            this._originalName = companyName;
-            this.displayName = companyName;
-        }
+        
     }
 }

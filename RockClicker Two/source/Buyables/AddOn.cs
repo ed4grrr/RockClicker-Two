@@ -27,6 +27,7 @@ namespace RockClicker_Two{
 
     private float _costModifier = 0.10f;
 
+    internal long _amountOwned = 0;
 
 
 

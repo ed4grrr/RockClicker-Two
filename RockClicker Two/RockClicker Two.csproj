@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="GameState.cs" />
     <Compile Include="source\Buyables\AddOn.cs" />
+    <Compile Include="source\Forms\MainForm\Form1Events\AddOnListEvents.cs" />
     <Compile Include="source\Forms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,10 +69,10 @@
     </Compile>
     <Compile Include="source\util\DataSourceManager.cs" />
     <Compile Include="source\util\RockCalculator.cs" />
-    <Compile Include="source\Forms\Form1.cs">
+    <Compile Include="source\Forms\MainForm\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="source\Forms\Form1.Designer.cs">
+    <Compile Include="source\Forms\MainForm\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="source\GameCycle\GameCycle.cs" />
@@ -93,7 +94,7 @@
     <Compile Include="source\Forms\StartScreenForm.Designer.cs">
       <DependentUpon>StartScreenForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="source\Forms\Form1.resx">
+    <EmbeddedResource Include="source\Forms\MainForm\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

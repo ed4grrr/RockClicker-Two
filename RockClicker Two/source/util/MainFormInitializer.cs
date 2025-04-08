@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RockClicker_Two.source.util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace RockClicker_Two
 {
     internal class MainFormInitializer
     {
+        internal DataSourceManager dataSourceManager = new DataSourceManager();
         public MainFormInitializer(Form1 form)
         {
             _initializeOwnedAddons(form);
@@ -46,10 +48,7 @@ namespace RockClicker_Two
 
         private void _initializeListboxes(Form1 form)
         {
-            foreach (var addOn in form._gameState.addOns)
-            {
-                form.addOnsListbox.Items.Add(addOn.Name);
-            }
+            this.dataSourceManager.BindControls(form.owned, form._gameState);
 
             foreach (var upgrade in form._gameState.upgrades)
             {
